@@ -15,7 +15,7 @@ namespace DelegateEx03Console
 
             double[] myDoubles = { 2, 1.41, 7.2 };
             int[] myIntegers = { 2, 3, 7 };
-            decimal[] myDecimals = { 5.6M, 8.2M, -2.345M };
+            decimal[] myDecimals = { 5M, 8.2M, -2.345M };
 
             // Because myDoubles is a double array,
             // compiler looks for method Square that
@@ -34,6 +34,7 @@ namespace DelegateEx03Console
             // has type parameter of int.
             Console.WriteLine("\r\nSquaring integers with callback:");
             Transformers.Transform(myIntegers, Square);
+            
 
             foreach (var item in myIntegers)
             {

@@ -6,29 +6,35 @@ using System.Text;
 namespace DelegateLibrary
 {
     // Declare a generic delegate
-    public delegate T Transformer<T>(T arg);
-
+    public delegate T Transform<T>(T value);
+    
     public class Transformers
     {
+
         // Generic method operates on arrays of type
         // T, requiring Transformer delegate of same
         // type.
-        public static void Transform<T>(T[] values
-            , Transformer<T> trans)
+        public static void Transform<T>(T[] arg, Transform<T> del)
         {
-            for (int i = 0; i < values.Length; i++)
+            for (int i = 0; i < arg.Length; i++)
             {
-                values[i] = trans(values[i]);
+                arg[i] = del(arg[i]);
             }
         }
 
-        public static void TransformFunc<T>(T[] values,
-            Func<T, T> trans)
+        public static void TransformFunc<T>(T[] arg, Func<T, T> func)
         {
-            for (int i = 0; i < values.Length; i++)
+            for (int i = 0; i < arg.Length; i++)
             {
-                values[i] = trans(values[i]);
+                arg[i] = func(arg[i]);
             }
         }
     }
+
+
+
+
+
+
+
 }
