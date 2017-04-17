@@ -22,7 +22,7 @@ namespace DelegateEx01Console
                 // To use an instance method, we need to create an instance
                 // of an object that has the method.
                 Adjuster adj = new Adjuster(percentage);
-                // delegate operation to the object
+                // delegate operation to the object     
                 d = adj.Apply;
             }
             else
@@ -30,6 +30,7 @@ namespace DelegateEx01Console
                 // To use a static method, we just use the class name to 
                 // reference the method.
                 d = Adjuster.ApplyStandard;
+                
             }
 
             while (true)

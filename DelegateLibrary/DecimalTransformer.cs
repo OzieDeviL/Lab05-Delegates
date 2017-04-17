@@ -7,8 +7,7 @@ namespace DelegateLibrary
 {
     public class DecimalTransformer
     {
-        public static void Transform(decimal[] values
-            , AdjustDelegate adj)
+        public static void Transformer(decimal[] values, AdjustDelegate adj)
         {
             for (int i = 0; i < values.Length; i++)
             {

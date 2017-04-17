@@ -7,7 +7,7 @@ namespace DelegateEx00Console
 {
     // Step 1: Define a delegate type with the right "shape"
     // (i.e., parameter list and return type)
-    public delegate double BinaryOperation(double operand1, double operand2);
+    public delegate double BinaryOperation(double op1, double op2);
 
     class Program
     {
@@ -16,7 +16,6 @@ namespace DelegateEx00Console
             Console.WriteLine("Delegate Example 0 - A degenerate usage: ");
             double a = 24;
             double b = 11;
-            double c;
 
             // Step 2: Declare a reference variable for a 
             // Binary Operation delegate
@@ -24,22 +23,22 @@ namespace DelegateEx00Console
 
             // Step 3: Instantiate a delegate and 
             // assign to variable
-            binOp = new BinaryOperation(BinaryOperations.Add);
-            // binOp = BinaryOperations.Add;  // Short Form
+            //binOp = new BinaryOperation(BinaryOperations.Add);
+            binOp = BinaryOperations.Add;  // Short Form
 
             // Step 4: Invoke the delegate to use it.
-            c = binOp.Invoke(a, b);
-            //c = binOp(a, b); // Short Form
+            //double c = binOp.Invoke(a, b);
+            double c = binOp(a, b); // Short Form
 
             Console.WriteLine(a + " + "
                 + b + " = " + c);
 
             // Programmatically switch methods by
             // re-assigning the delegate to Subtract
-            binOp = BinaryOperations.Subtract;
+          
 
             // Delegate subtracts
-            c = binOp(a, b);
+           
 
             Console.WriteLine(a + " - "
                 + b + " = " + c);
